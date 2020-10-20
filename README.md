@@ -6,6 +6,13 @@
 
 [デモサイト](https://hzrss-demo.hanzubon.jp/login)
 
+機能的には...
+
+ * ユーザ情報を極力サーバ側に残さない設計
+ * pubsubhubbub対応
+ * PWA対応
+ * OPMLのインポートには対応してる(ただ TinyTiny RSS が吐いたものでしか試してない)エクスポートはまだない
+ * (Android等で)システムのdark/lightモード切り替えを見るはず
 
 # TODOs
 
