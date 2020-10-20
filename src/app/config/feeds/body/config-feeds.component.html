@@ -1,0 +1,18 @@
+<div>
+  <mat-card *ngFor="let cat of feedtree$ | async">
+    <mat-card-title>
+      {{cat.category_name}}
+      <app-category-editor [cat_id]="cat.category_id" [name]="cat.category_name"></app-category-editor>
+      <app-category-deleter [cat_id]="cat.category_id" [name]="cat.category_name"></app-category-deleter>
+    </mat-card-title>
+    <mat-card-content>
+      <mat-list>
+	<mat-list-item *ngFor="let feed of cat.feeds">
+	  <a class="item-link" routerLink="/list/feed/{{feed.id}}">{{feed.name}}</a>
+	  <app-feed-editor [feed]="feed" [cat_id]="cat.category_id"></app-feed-editor>
+	  <app-feed-unsubscriber [name]="feed.name" [feed_id]="feed.id"></app-feed-unsubscriber>
+	</mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</div>

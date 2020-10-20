@@ -1,0 +1,8 @@
+<div class="login-btn-wrap">
+  <button mat-raised-button color="primary" class="login-btn" (click)="login()">ログイン</button>
+  <div *ngIf="isDemoMode">
+    デモモードで動いています。作製されたアカウントとデータは1時間程度で消去されます。
+  </div>
+  <hr />
+  <app-about></app-about>
+</div>

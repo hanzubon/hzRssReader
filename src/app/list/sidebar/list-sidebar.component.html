@@ -1,0 +1,16 @@
+<mat-list dense>
+  <ng-container *ngFor="let cat of cat$ | async">
+    <mat-list-item [class.selected-item]="cat.id == cat_id" class="list-sidebar-list-item">
+      <app-folder-icon (click)="toggleFeedOpenState(cat.id)" [state]="getFeedsOpenState(cat.id)"></app-folder-icon>
+      <a routerLink="/list/{{cat.id}}">
+	<ng-container *ngIf="cat.unread > 0; else NoUnread">
+	  <app-sidebar-item [count]="cat.unread" [name]="cat.name"></app-sidebar-item>
+	</ng-container>
+	<ng-template #NoUnread>
+	  <span>{{cat.name}}</span>
+	</ng-template>
+      </a>
+    </mat-list-item>
+    <app-feed-list [state]="getFeedsOpenState(cat.id)" [feeds]="feeds_cache[cat.id] || []" [feed_id]="feed_id"></app-feed-list>
+  </ng-container>
+</mat-list>

@@ -1,0 +1,9 @@
+<ng-container *ngIf="state == 'open' || force_open">
+  <ng-container *ngFor="let feed of feeds">
+    <div class="feed-link-wrap" [class.selected-item]="feed.id == feed_id">
+      <a routerLink="/list/feed/{{feed.id}}">
+	<app-sidebar-item [count]="feed.unread" [name]="feed.name"></app-sidebar-item>
+      </a>
+    </div>
+  </ng-container>
+</ng-container>

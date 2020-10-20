@@ -1,0 +1,46 @@
+<mat-list>
+  <a routerLink="/list">
+    <mat-list-item>Home</mat-list-item>
+  </a>
+  <span *ngIf="active == 'view'; else viewElse">
+    <mat-list-item class="selected-item">
+      View
+    </mat-list-item>
+  </span>
+  <ng-template #viewElse>
+    <a routerLink="/config/view">
+      <mat-list-item>
+	View
+      </mat-list-item>
+    </a>
+  </ng-template>
+  <span *ngIf="active == 'feeds'; else feedsElse">
+    <mat-list-item class="selected-item">
+      Feeds
+    </mat-list-item>
+  </span>
+  <ng-template #feedsElse>
+    <a routerLink="/config/feeds">
+      <mat-list-item>
+	Feeds
+      </mat-list-item>
+    </a>
+  </ng-template>
+  <span *ngIf="active == 'about'; else aboutElse">
+    <mat-list-item class="selected-item">
+      About
+    </mat-list-item>
+  </span>
+  <ng-template #aboutElse>
+    <a routerLink="/about">
+      <mat-list-item>
+	About
+      </mat-list-item>
+    </a>
+  </ng-template>
+  <a routerLink="/logout">
+    <mat-list-item>
+      Logout
+    </mat-list-item>
+  </a>
+</mat-list>

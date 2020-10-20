@@ -1,0 +1,10 @@
+<mat-card [class.is_read]="checked">
+  <mat-card-title>
+    <mat-checkbox [checked]="checked" (change)="toggleRead($event)"></mat-checkbox> <a href="{{item.link}}" target="_blank" rel="noopener" [innerHTML]="item.title"></a>
+  </mat-card-title>
+  <mat-card-subtitle>
+    {{item.pubdate | date:'yyyy-MM-dd HH:mmZ'}}
+  </mat-card-subtitle>
+  <mat-card-content [innerHTML]="item.content">
+  </mat-card-content>
+</mat-card>

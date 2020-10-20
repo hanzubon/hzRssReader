@@ -1,0 +1,14 @@
+const url_base = 'https://hzrss.example.com'
+
+export const environment = {
+    production: true,
+    demo: false,
+    api_base: url_base,
+    auth_opts: {
+	client_id: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+	domain: 'example.xx.auth0.com',
+	language: 'ja',
+	redirect_url: url_base+'/login',
+	whitelistedDomains: ['hzrss.example.com']
+    }
+};

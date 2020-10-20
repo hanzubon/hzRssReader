@@ -1,0 +1,28 @@
+<ng-container *ngIf="headlines$ | async as items">
+  <ng-container *ngIf="items.content.length; else noListBlock">
+    <virtual-scroller class="scroll-viewport" #scroll [items]="items.content" [enableUnequalChildrenSizes]="true" [scrollAnimationTime]="0" [useMarginInsteadOfTranslate]="true" (vsChange)="changeList($event, items.content)">
+      <div #container>
+	<ng-container *ngFor="let item of scroll.viewPortItems">
+	  <div *ngIf="isHead(item); else ItemBlock">
+	    <app-list-head [head]="item._head"></app-list-head>
+	  </div>
+	  <ng-template #ItemBlock>
+	    <div>
+	      <app-list-item [item]="item" [status]="getStatusSubject(item.id, item.status)"></app-list-item>
+	    </div>
+	  </ng-template>
+	</ng-container>
+      </div>
+      <div class="spacer" #spacer>
+        <button  (click)="readAll(items.content)" class="read-all-btn" mat-raised-button color="warn">Read All</button>
+      </div>
+    </virtual-scroller>
+    <button (click)="readAll(items.content)" [style.left]="settings.button_position+'%'" class="read-all-btn" mat-raised-button color="warn">Read All</button>
+  </ng-container>
+  <ng-template #noListBlock>
+    <div class="no-headlines-wrap">
+      記事がありません
+    </div>
+  </ng-template>
+</ng-container>
+<app-ui-loader [loading]="loading"></app-ui-loader>

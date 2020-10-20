@@ -1,0 +1,33 @@
+{
+    "database": {"name": "hzrss",
+		 "host": "db00.example.com",
+		 "user": "rssuser",
+		 "password": "rsspass"},
+    "elasticsearch": {
+	"node": "http://el1.example.com:9200",
+	"index": "hzrss"
+    },
+    "pubsubhubbub": {"port": 1337,
+		     "url": "https://sub.example.com/hzrss"},
+    "mq": {
+	"servers": ["amqp://hzrss:hzrss@mq1.example.com/hzrss",
+		    "amqp://hzrss:hzrss@mq2.example.com/hzrss",
+		    "amqp://hzrss:hzrss@mq3.example.com/hzrss"],
+	"queue": "update_rss"
+    },
+    "auth": {
+	"AUTH0_DOMAIN": "example.xx.auth0.com",
+	"AUTH0_CLIENT_ID": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+	"AUTH0_CLIENT_SECRET": "abcdefghijklmnopqrstuvwxyz123",
+	"AUTH0_CALLBACK_URL": "https://hzrss.example.com/login"
+    },
+    "system": {
+	"create_user": true
+    },
+    "log": {
+	"size": "10MB",
+	"interval": "1d",
+	"compress": "gzip",
+	"path": "/var/log/hzRssReader"
+    }
+}

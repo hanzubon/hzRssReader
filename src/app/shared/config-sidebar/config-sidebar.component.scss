@@ -1,0 +1,25 @@
+.mat-list-item {
+    color: #ccc;
+}
+
+.mat-list-item.selected-item {
+    background-color: #3b3b63;
+    color: #fff;
+}
+
+.mat-list-item:hover {
+    background-color: #3f3f3f;
+}
+
+.mat-list-item.selected-item:hover {
+    background-color: #536dfe;
+}
+
+:host-context(.app-light-theme) {
+    .mat-list-item:hover {
+	background-color: #e0e0e0;
+    }
+    .mat-list-item.selected-item {
+	background-color: #3f51b5;
+    }
+}

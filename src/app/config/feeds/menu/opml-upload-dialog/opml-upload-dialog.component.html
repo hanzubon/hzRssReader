@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>OPML import</h1>
+<div mat-dialog-content>
+  <div class="upload-wrap">
+    <button mat-flat-button color="primary" (ngxf-select)="uploadFile($event)">
+      Select OPML file
+    </button>
+    <ng-container *ngIf="progress">
+      <div class="progress-bar-wrap">
+	<span>{{progress}} %</span>
+	<mat-progress-bar mode="indeterminate" color="accent" [value]="progress"></mat-progress-bar>
+      </div>
+      <div class="prosessing-wrap" *ngIf="progress == 100">
+	<span>Processing, please wait...</span>
+	<mat-spinner color="warn"></mat-spinner>
+      </div>
+    </ng-container>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-flat-button (click)="onNoClick()">Cancel</button>
+</div>

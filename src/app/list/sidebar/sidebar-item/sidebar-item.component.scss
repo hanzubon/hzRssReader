@@ -1,0 +1,30 @@
+.sidebar-item-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-item-label {
+    flex-grow: 0;
+    flex-shrink: 1;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.sidebar-item-count {
+    flex-grow: 0;
+    flex-shrink: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 10px;
+    font-weight: 600;
+    width: 22px;
+    height:22px;
+    line-height: 22px;
+    border-radius: 50%;
+    color: #000f;
+    background-color: #cdf;
+    text-align: center;
+    margin-left: 6px;
+}

@@ -1,0 +1,33 @@
+{
+    "database": {"name": "rsstest",
+		 "host": "devdb.example.com",
+		 "user": "devuser",
+		 "password": "devpass"},
+    "elasticsearch": {
+	"node": "http://el1.example.com:9200",
+	"index": "rsstest1"
+    },
+    "pubsubhubbub": {"port": 1337,
+		     "url": "https://sub.example.com/testsub"},
+    "mq": {
+	"servers": ["amqp://hzrss:hzrss@mq1.example.com/hzrss",
+		    "amqp://hzrss:hzrss@mq2.example.com/hzrss",
+		    "amqp://hzrss:hzrss@mq3.example.com/hzrss"],
+	"queue": "update_test"
+    },
+    "auth": {
+	"AUTH0_DOMAIN": "example.xx.auth0.com",
+	"AUTH0_CLIENT_ID": "abcdefghijklmnopqrstuvwxyz",
+	"AUTH0_CLIENT_SECRET": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+	"AUTH0_CALLBACK_URL": "http://localhost:4203/login"
+    },
+    "system": {
+	"create_user": true
+    },
+    "log": {
+	"size": "10MB",
+	"interval": "1d",
+	"compress": "gzip",
+	"path": "/tmp"
+    }
+}

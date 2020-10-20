@@ -1,0 +1,26 @@
+<h1 mat-dialog-title>Delete category</h1>
+<div mat-dialog-content>
+  <p>カテゴリ{{data.name}}を削除します。このカテゴリ以下のフィードは選択肢たカテゴリに移動されます(もしくは、全て削除することもできます)</p>
+  <mat-form-field>
+    <mat-select placeholder="Category" [(ngModel)]="data.cat_id" required>
+      <ng-container *ngFor="let cat of cat$ | async">
+	<mat-option [value]="cat.id" *ngIf="cat.id != data.target_cat_id">
+          {{cat.name}}
+	</mat-option>
+      </ng-container>
+      <mat-option [value]="-1">
+        New Category
+      </mat-option>
+      <mat-option [value]="-2">
+        Delete all feeds under the category
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field *ngIf="data.cat_id == -1">
+    <input matInput [(ngModel)]="data.cat_name" placeholder="Category Name">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-flat-button (click)="onNoClick()">Cancel</button>
+  <button mat-flat-button color="primary" [disabled]="!!!data.cat_id || (data.cat_id == -1 && (!!!data.cat_name || data.cat_name == ''))" [mat-dialog-close]="data" cdkFocusInitial>Submit</button>
+</div>

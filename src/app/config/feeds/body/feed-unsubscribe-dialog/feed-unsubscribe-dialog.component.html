@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Unsubscribe feed</h1>
+<div mat-dialog-content>
+  <p>フィード {{data.name}} の購読を停止します(リストから削除します)、よろしいいですか?</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-flat-button (click)="onNoClick()">Cancel</button>
+  <button mat-flat-button color="primary" [mat-dialog-close]="data" cdkFocusInitial>Submit</button>
+</div>

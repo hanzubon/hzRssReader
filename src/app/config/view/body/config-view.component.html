@@ -1,0 +1,71 @@
+<div class="config-view-main-wrap">
+  <form [formGroup]="settingForm">
+    <p class="radio-wrap">
+      <label>カテゴリ表示モード</label>
+      <mat-radio-group formControlName="categories_view_mode">
+	<mat-radio-button value="all">
+	  全部
+	</mat-radio-button>
+	<mat-radio-button value="unread_only">
+	  未読のみ
+	</mat-radio-button>
+      </mat-radio-group>
+    </p>
+
+    <p class="radio-wrap">
+      <label>エントリ表示モード</label>
+      <mat-radio-group formControlName="headlines_view_mode">
+	<mat-radio-button value="adaptive">
+	  ディフォルト
+	</mat-radio-button>
+	<mat-radio-button value="all">
+	  全部
+	</mat-radio-button>
+	<mat-radio-button value="unread_only">
+	  未読のみ
+	</mat-radio-button>
+      </mat-radio-group>
+    </p>
+
+    <p class="radio-wrap">
+      <label>テーマ</label>
+      <mat-radio-group formControlName="theme" >
+	<mat-radio-button value="dark">
+	  ダーク
+	</mat-radio-button>
+	<mat-radio-button value="light">
+	  ライト
+	</mat-radio-button>
+	<mat-radio-button value="os">
+	  OS設定を参照
+	</mat-radio-button>
+      </mat-radio-group>
+    </p>
+
+    <p class="radio-wrap">
+      <label>スクロールして上に抜けていった記事を既読にする</label>
+      <mat-slide-toggle #rws formControlName="read_with_scroll">
+	<span *ngIf="rws.checked; else ScrollOffBlock">ON</span>
+	<ng-template #ScrollOffBlock>
+	  <span>OFF</span>
+	</ng-template>
+      </mat-slide-toggle>
+    </p>
+<!-- 再実装が必要なので 一時的に disable にしとく
+    <p class="radio-wrap">
+      <label>スクロールの底についたら既読にする</label>
+      <mat-slide-toggle #rrb formControlName="read_reach_bottom">
+	<span *ngIf="rrb.checked; else BottomOffBlock">ON</span>
+	<ng-template #BottomOffBlock>
+	  <span>OFF</span>
+	</ng-template>
+      </mat-slide-toggle>
+    </p>
+-->
+    <p class="radio-wrap">
+      <label>All Read button position</label>
+      <mat-slider thumbLabel formControlName="button_position" min="10" max="90" step="1"></mat-slider><button mat-raised-button color="primary" (click)="resetButtonPosition()">reset</button>
+    </p>
+    <button [style.left]="settingForm.value.button_position+'%'" class="read-all-btn" mat-raised-button color="warn">Read All</button>
+  </form>
+</div>

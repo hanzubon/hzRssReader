@@ -1,0 +1,28 @@
+<h1 mat-dialog-title>Feed Edit</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <input matInput value="{{data.feed_url}}" placeholder="Feed URL" disabled readonly>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.name" placeholder="Feed Name" required>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select placeholder="Category" [(ngModel)]="data.cat_id" required>
+      <ng-container *ngFor="let cat of cat$ | async">
+	<mat-option [value]="cat.id">
+          {{cat.name}}
+	</mat-option>
+      </ng-container>
+      <mat-option value="-1">
+        New Category
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field *ngIf="data.cat_id == -1">
+    <input matInput [(ngModel)]="data.cat_name" placeholder="Category Name">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-flat-button (click)="onNoClick()">Cancel</button>
+  <button mat-flat-button color="primary" [disabled]="!!!data.name || data.name == '' || !!!data.cat_id || (data.cat_id == -1 && (!!!data.cat_name || data.cat_name == ''))" [mat-dialog-close]="data" cdkFocusInitial>Submit</button>
+</div>

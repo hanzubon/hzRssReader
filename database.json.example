@@ -1,0 +1,26 @@
+{
+    "dev": {
+	"host": "devdb.example.com",
+	"user": "devuser",
+	"password" : "devpass",
+	"database": "rssdev",
+	"driver": "mysql",
+	"multipleStatements": true
+    },
+    "prod": {
+	"host": "db00.example.com",
+	"user": "rssuser",
+	"password" : "rsspass",
+	"database": "hzrss",
+	"driver": "mysql",
+	"multipleStatements": true
+    },
+    "demo": {
+	"host": "demodb.hanzubon.jp",
+	"user": "demouser",
+	"password" : "demopass",
+	"database": "rssdemo",
+	"driver": "mysql",
+	"multipleStatements": true
+    }
+}

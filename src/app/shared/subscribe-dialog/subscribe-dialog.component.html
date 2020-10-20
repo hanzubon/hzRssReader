@@ -1,0 +1,23 @@
+<h1 mat-dialog-title>Subscribe feed</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <input matInput type="url" [(ngModel)]="data.url" placeholder="Feed URL" required cdkFocusInitial>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select placeholder="Category" [(ngModel)]="data.cat_id" required>
+      <mat-option *ngFor="let cat of cat$ | async" [value]="cat.id">
+	{{cat.name}}
+      </mat-option>
+      <mat-option value="-1">
+	New Category
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field *ngIf="data.cat_id == -1">
+    <input matInput [(ngModel)]="data.cat_name" placeholder="Category Name">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-flat-button (click)="onNoClick()">Cancel</button>
+  <button mat-flat-button color="primary" [disabled]="!!!data.url || data.url == '' || !!!data.cat_id || (data.cat_id == -1 && (!!!data.cat_name || data.cat_name == ''))" [mat-dialog-close]="data">Submit</button>
+</div>

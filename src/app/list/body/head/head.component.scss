@@ -1,0 +1,13 @@
+.item-head {
+    padding: 8px;
+    background-color: #777;
+}
+
+.item-head > a {
+    color: #ddd;
+    font-size: 1.4rem;
+}
+
+.item-head > a:hover {
+    text-decoration: underline;
+}

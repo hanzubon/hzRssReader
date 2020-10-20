@@ -1,0 +1,17 @@
+.about-wrap {
+    display: flex;
+    font-size: 2rem;
+    flex-direction: column;
+    justify-content : center;
+    padding: 8px;
+}
+
+.about-wrap > div {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-bottom: 8px;
+}
+
+:host-context(.is-mobile) .about-wrap {
+    margin-top: 80px;
+}

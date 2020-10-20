@@ -1,0 +1,28 @@
+.radio-wrap {
+    margin: 20px;
+}
+
+.radio-wrap label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.radio-wrap mat-radio-button,
+.radio-wrap mat-slide-toggle, {
+    margin: 0px 10px;
+}
+
+:host-context(.is-mobile) .config-view-main-wrap {
+    margin-top: 76px;
+}
+
+mat-slider {
+    width: 300px;
+}
+
+.read-all-btn {
+    position: absolute;
+    bottom: 10px;
+    transform: translate(-50%,0);
+}

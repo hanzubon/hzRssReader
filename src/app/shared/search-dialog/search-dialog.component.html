@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>Search</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.query" placeholder="Search" required cdkFocusInitial>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-flat-button (click)="onNoClick()">Cancel</button>
+  <button mat-flat-button color="primary" [disabled]="!!!data.query" [mat-dialog-close]="data">Submit</button>
+</div>

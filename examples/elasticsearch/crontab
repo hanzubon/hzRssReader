@@ -1,0 +1,1 @@
+*/10 * * * * root /usr/share/logstash/bin/logstash -f /PATH_TO_EXAMPLE/jdbc_rssdemo.conf 2> /dev/null > /dev/null

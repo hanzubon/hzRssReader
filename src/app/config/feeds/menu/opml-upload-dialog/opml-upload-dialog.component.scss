@@ -1,0 +1,21 @@
+.upload-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.progress-bar-wrap {
+    padding: 12px;
+}
+
+.prosessing-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+.prosessing-wrap > span {
+    margin-bottom: 20px;
+}

@@ -1,0 +1,39 @@
+.scroll-viewport {
+    height: calc(100vh - 56px);
+    width: 100%;
+}
+
+.spacer {
+    height: 100px;
+    width: 100%;
+}
+
+.no-headlines-wrap {
+    background-color: #000;
+    padding: 24px 48px;
+    font-size: 1.5rem;
+}
+
+:host-context(.app-light-theme) {
+    .no-headlines-wrap {
+	background-color: #ccc;
+    }
+}
+
+.read-all-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+
+.spacer .read-all-btn {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    transform: none;
+}
+
+:host-context(.is-mobile) .spacer .read-all-btn {
+    display: none;
+}

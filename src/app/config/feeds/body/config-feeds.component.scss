@@ -1,0 +1,17 @@
+a.item-link {
+    color: #ccc;
+}
+
+.mat-list-item:hover {
+    background-color: #7f7f7f;
+}
+
+:host-context(.app-light-theme) {
+    a.item-link {
+	color: #666;
+    }
+
+    .mat-list-item:hover {
+	background-color: #cfcfcf;
+    }
+}

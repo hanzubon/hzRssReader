@@ -1,0 +1,16 @@
+<div class="with-sidebar-wrapper" [class.is-mobile]="isMobile()" (swipeleft)="swipeLeft()" (swiperight)="swipeRight()">
+  <mat-toolbar color="primary" class="menu-toolbar">
+    <button mat-icon-button (click)="toggle()"><mat-icon>menu</mat-icon></button>
+    <router-outlet name="menu"></router-outlet>
+  </mat-toolbar>
+  <mat-sidenav-container class="sidebar-container">
+    <mat-sidenav #sidenav [mode]="navMode">
+      <router-outlet name="sidebar"></router-outlet>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div class="main-content">
+	<router-outlet name="body"></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

@@ -1,0 +1,9 @@
+<div class="about-wrap">
+  <div>
+    {{versions.name}} : {{versions.version}}/{{versions.revision}}({{versions.branch}})<br />
+    commit at {{versions.datetime}}
+  </div>
+  <div *ngIf="swEnabled">
+    <button mat-raised-button color="primary" (click)="check()">Force check update available</button>
+  </div>
+</div>
